@@ -2,9 +2,13 @@
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using System.Reflection;
 using Damas.Domain.Modules.Security.Entities;
 using Incentive.Entity;
 using Incentive.Entity.Modules.Incentive.RootEntities;
+using Incentive.Mapping;
+using Incentive.Mapping.Modules.Incentive.Entities;
+using Incentive.Mapping.Modules.Incentive.RootEntities;
 
 namespace Damas.Infrastructure.Context
 {
@@ -24,6 +28,14 @@ namespace Damas.Infrastructure.Context
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
+            //var assembly=Assembly.GetAssembly(typeof(MapAssembly));
+            //modelBuilder.Configurations.AddFromAssembly(assembly);
+           
+            modelBuilder.Configurations.Add(new EmployeeConfigure());
+            modelBuilder.Configurations.Add(new EvaluationConfigure());
+            modelBuilder.Configurations.Add(new SectionYearConfigure());
+
         }
         public override int SaveChanges()
         {

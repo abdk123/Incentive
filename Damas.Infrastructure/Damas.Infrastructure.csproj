@@ -64,6 +64,10 @@
       <Project>{4ccb8487-3b22-4cb0-8ec6-7624d0f4231d}</Project>
       <Name>Incentive.Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Incentive.Mapping\Incentive.Mapping.csproj">
+      <Project>{141d871c-dcc1-42fd-873e-9bff2d7928d0}</Project>
+      <Name>Incentive.Mapping</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
