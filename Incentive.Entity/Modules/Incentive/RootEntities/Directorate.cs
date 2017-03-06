@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Damas.Domain.Shared;
 using Incentive.Entity.Modules.Incentive.Entities;
@@ -7,6 +8,13 @@ namespace Incentive.Entity.Modules.Incentive.RootEntities
 {
     public class Directorate:EntityBase
     {
+        public Directorate()
+        {
+            Employees=new List<Employee>();
+            Workers=new List<Worker>();
+            WeightingDirectorateStaffs=new List<WeightingDirectorateStaff>();
+        }
+
         public string DirectorateName { get; set; }
 
         /// <summary>
@@ -43,7 +51,8 @@ namespace Incentive.Entity.Modules.Incentive.RootEntities
         /// <summary>
         /// عدد الموظفين
         /// </summary>
-        public int EmployeesCount { get { return Employees.Count(x => x.Directorate.Id == this.Id); } }
+        //public int EmployeesCount { get { return Employees.Count(x => x.Directorate.Id == this.Id); } }
+        public int EmployeesCount { get; set; }
         public int EmployeesCountPercent { get; set; }
 
         public bool PresentIsAhundred
@@ -58,8 +67,8 @@ namespace Incentive.Entity.Modules.Incentive.RootEntities
             }
         }
 
-        public Collection<Employee> Employees { get; set; }
-        public Collection<Worker> Workers { get; set; }
-        public Collection<WeightingDirectorateStaff> WeightingDirectorateStaffs { get; set; }
+        public ICollection<Employee> Employees { get; set; }
+        public ICollection<Worker> Workers { get; set; }
+        public ICollection<WeightingDirectorateStaff> WeightingDirectorateStaffs { get; set; }
     }
 }

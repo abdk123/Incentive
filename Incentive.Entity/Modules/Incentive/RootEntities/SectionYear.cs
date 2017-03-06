@@ -9,6 +9,7 @@ namespace Incentive.Entity.Modules.Incentive.RootEntities
 {
     public class SectionYear:EntityBase
     {
+        
         public int Year { get; set; }
         public int Part { get; set; }
     }

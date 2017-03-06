@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Damas.Domain.Shared;
 using Incentive.Entity.Modules.Incentive.Enums;
 using Incentive.Entity.Modules.Incentive.Indexs;
@@ -8,6 +10,10 @@ namespace Incentive.Entity.Modules.Incentive.Entities
 {
     public class Employee:EntityBase
     {
+        public Employee()
+        {
+            Evaluations = new List<Evaluation>();
+        }
         /// <summary>
         /// الاسم الكامل
         /// </summary>
@@ -34,6 +40,6 @@ namespace Incentive.Entity.Modules.Incentive.Entities
         /// </summary>
         public bool IsEngineer { get; set; }
 
-        public Evaluation Evaluation { get; set; }
+        public ICollection<Evaluation> Evaluations { get; set; }
     }
 }

@@ -20,22 +20,25 @@ namespace Damas.Infrastructure.Context
             
         }
 
-        public DbSet<Directorate> Directorates { get; set; }
-        public DbSet<Role> Roles { get; set; }
+        //public DbSet<Directorate> Directorates { get; set; }
+        //public DbSet<Role> Roles { get; set; }
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            var assemblyEntity = Assembly.GetAssembly(typeof(AssemblyEntity));
+            foreach (var ass in assemblyEntity.GetTypes().Where(x=>x.IsClass==true && x.Name!="AssemblyEntity"))
+            {
+                this.Set(ass);
+            }
+            
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            //var assembly=Assembly.GetAssembly(typeof(MapAssembly));
-            //modelBuilder.Configurations.AddFromAssembly(assembly);
+            var assembly = Assembly.GetAssembly(typeof(MapAssembly));
+            modelBuilder.Configurations.AddFromAssembly(assembly);
            
-            modelBuilder.Configurations.Add(new EmployeeConfigure());
-            modelBuilder.Configurations.Add(new EvaluationConfigure());
-            modelBuilder.Configurations.Add(new SectionYearConfigure());
-
+            
         }
         public override int SaveChanges()
         {

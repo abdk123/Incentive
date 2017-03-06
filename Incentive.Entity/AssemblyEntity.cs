@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Incentive.Mapping
+namespace Incentive.Entity
 {
-    public class Class1
+    public class AssemblyEntity
     {
     }
 }

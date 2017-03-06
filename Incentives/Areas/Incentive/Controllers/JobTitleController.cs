@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Damas.Domain.Interfaces.Repositories;
 using Damas.Infrastructure.Repositories;
 using Incentive.Entity.Modules.Incentive.Indexs;
+using Incentives.Repositories;
+using Incentives.Repositories.Factory;
 
 namespace Incentives.Areas.Incentive.Controllers
 {
     public class JobTitleController : Controller
     {
-        RepositoryBase<JobTitle> _context=new RepositoryBase<JobTitle>();
+        IRepositoryBase<JobTitle> _context=new RepositoryBase<JobTitle>();
         // GET: /Incentive/JobTitle/
         public ActionResult Index()
         {
@@ -19,8 +22,10 @@ namespace Incentives.Areas.Incentive.Controllers
 
         public ActionResult Read()
         {
-            var jobTitle = _context.GetAll().ToList();
-            return Json(jobTitle, JsonRequestBehavior.AllowGet);
+            var repository=DamasFactory.GetRepositoryInstance<JobTitle, JobTitleReporitory>();
+            
+            return Json(repository.GetIndexAfterOrder()
+                , JsonRequestBehavior.AllowGet);
         }
 	}
 }

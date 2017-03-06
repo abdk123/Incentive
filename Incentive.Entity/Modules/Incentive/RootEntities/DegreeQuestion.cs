@@ -12,8 +12,13 @@ namespace Incentive.Entity.Modules.Incentive.RootEntities
 {
     public class DegreeQuestion:EntityBase
     {
-        public Collection<Question> Questions { get; set; }
-        public Collection<Answer> Answers { get; set; }
+        public DegreeQuestion()
+        {
+            Questions=new List<Question>();
+            Answers=new List<Answer>();
+        }
+        public ICollection<Question> Questions { get; set; }
+        public ICollection<Answer> Answers { get; set; }
         public int Degree { get; set; }
     }
 }

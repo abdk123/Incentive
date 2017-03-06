@@ -39,18 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyEntity.cs" />
     <Compile Include="Modules\Incentive\Entities\Employee.cs" />
     <Compile Include="Modules\Incentive\Entities\EvaluationAnswer.cs" />
     <Compile Include="Modules\Incentive\Entities\Question.cs" />
-    <Compile Include="Modules\Incentive\Indexs\Answer.cs" />
+    <Compile Include="Modules\Incentive\Indexes\Answer.cs" />
     <Compile Include="Modules\Incentive\RootEntities\DegreeQuestion.cs" />
     <Compile Include="Modules\Incentive\RootEntities\Evaluation.cs" />
     <Compile Include="Modules\Incentive\Entities\WeightingDirectorateStaff.cs" />
     <Compile Include="Modules\Incentive\Entities\Worker.cs" />
     <Compile Include="Modules\Incentive\Enums\JobCategory.cs" />
     <Compile Include="Modules\Incentive\RootEntities\Directorate.cs" />
-    <Compile Include="Modules\Incentive\Indexs\JobTitle.cs" />
-    <Compile Include="Modules\Incentive\Indexs\QuestionsGroup.cs" />
+    <Compile Include="Modules\Incentive\Indexes\JobTitle.cs" />
+    <Compile Include="Modules\Incentive\Indexes\QuestionsGroup.cs" />
     <Compile Include="Modules\Incentive\RootEntities\SectionYear.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
