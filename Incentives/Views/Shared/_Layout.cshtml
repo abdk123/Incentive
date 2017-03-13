@@ -6,12 +6,12 @@
     <title>@ViewBag.Title</title>
 
     <link href="~/Content/kendo/2016.1.226/kendo.common.min.css" rel="stylesheet" />
-    <link href="~/Content/kendo/2016.1.226/kendo.blueopal.min.css" rel="stylesheet" />
-
+    <link href="~/Content/kendo/2016.1.226/kendo.flat.min.css" rel="stylesheet" />
     <link href="~/Content/kendo/2016.1.226/kendo.rtl.min.css" rel="stylesheet" />
     @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
     <link href="~/Content/bootstrap-arabic.min.css" rel="stylesheet" />
-    <link href="~/Content/accordionMenu.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Menu/menu-ar.css" rel="stylesheet" />
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 
@@ -24,20 +24,20 @@
 
 </head>
 <body>
-    <div class="ab-header">
+<div class="ab-header">
         <div class="container">
             <div class="row">
                 <div class="col-md-1 col-md-1 col-sm-1" style="float: left; margin-left: 20px;">
-                    <img src="/Images/logo.png" width="80" height="70" />
+                    @*<img src="/Images/logo.png" width="80" height="70" />*@
                 </div>
-                <div class="col-md-1 col-md-1 col-sm-1" style="float: Right; margin-right: 20px;">
-                    <img src="/Images/boss.png" width="70" height="60" />
+                <div class="col-md-1 col-md-1 col-sm-1" style="float: Right; margin-top: 10px;">
+                    <img src="/Images/person-icon-blue.png" width="50" height="40" />
 
                 </div>
-                <div style="float: Right; margin-right: 5px;padding-top: 20px">
+                <div style="float: Right; margin-right: 2px;padding-top: 15px">
                     <div class="dropdown">
                         <a class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                            Dropdown Example
+                            User Name
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
@@ -53,149 +53,78 @@
         </div>
 
     </div>
-    <div style="clear: both"></div>
-    <div>
-        <div class="ab-content">
-            @RenderBody()
+    
 
+<div class="ab-container">
+    <div class="right-menu" >
+        <div class="logo">
+            <i class="fa fa-align-justify"></i>
+            <div>Pure CSS Accordion Nav</div>
         </div>
-        <div class="ab-menu-ar">
-            <div class="accordion-module">الحوافز</div>
-            <ul class="accordion">
-                <li id="one">
-                    <a href="#one">الكيانات الرئيسية</a>
-
-                    <ul class="sub-menu">
-
-                        <li><a href="#">المديريات</a></li>
-
-                        <li><a href="#">الموظفين</a></li>
-
-                        <li><a href="#">التقييم</a></li>
-
+        <div class="accordion-bwire">
+            <div class="section">
+                <input type="radio" name="accordion-1" id="section-1" checked="checked" />
+                <label for="section-1"><span>Messages</span></label>
+                <div class="content">
+                    <ul>
+                        <li><span>Inbox</span><i class="fa fa-inbox"></i></li>
+                        <li><span>Sent    </span><i class="fa fa-share"></i></li>
+                        <li><span>Archive</span><i class="fa fa-archive"></i></li>
                     </ul>
-
-                </li>
-                <li id="two">
-                    <a href="#two">الفهارس</a>
-                    <ul class="sub-menu">
-
-                        <li><a href='@Url.Action("Index", "JobTitle", new { area = "Incentive" })'>المسمى الوظيفي</a></li>
-
-                        <li><a href="#">أجوبة اسئلة التقييم</a></li>
-
-                        <li><a href="#">تصنيف اسئلة التقييم</a></li>
-
+                </div>
+            </div>
+            <div class="section">
+                <input type="radio" name="accordion-1" id="section-2" value="toggle" />
+                <label for="section-2"> <span>Usage</span></label>
+                <div class="content">
+                    <ul>
+                        <li><i class="fa fa-cog"></i><span>System</span></li>
+                        <li><i class="fa fa-group"></i><span>Users    </span></li>
+                        <li><i class="fa fa-sitemap"></i><span>Visitation</span></li>
                     </ul>
-                </li>
-                <li id="three"><a href="#three"><span >58</span> Cloud</a></li>
-                <li id="four"><a href="#four">Sign Out</a></li>
-            </ul>
-            @* ----- *@
-            <div class="accordion-module">نظام الصلاحيات</div>
-            <ul class="accordion">
-                <li id="one-sec">
-                    <a href="#one-sec">الكيانات الرئيسية</a>
-
-                    <ul class="sub-menu">
-
-                        <li><a href="#">المستخدمين</a></li>
-
-                        <li><a href="#">الأدوار</a></li>
-
+                </div>
+            </div>
+            <div class="section">
+                <input type="radio" name="accordion-1" id="section-3" value="toggle" />
+                <label for="section-3"> <span>Scroller</span></label>
+                <div class="content">
+                    <ul>
+                        <li><i class="fa fa-coffee"></i><span>Need Coffee</span></li>
+                        <li><i class="fa fa-coffee"></i><span>Need Coffee    </span></li>
+                        <li><i class="fa fa-coffee"></i><span>Need Coffee</span></li>
+                        <li><i class="fa fa-coffee"></i><span>Need Coffee</span></li>
+                        <li><i class="fa fa-coffee"></i><span>Need Coffee    </span></li>
+                        <li><i class="fa fa-coffee"></i><span>Need Coffee</span></li>
+                        <li><i class="fa fa-coffee"></i><span>Need Coffee</span></li>
+                        <li><i class="fa fa-coffee"></i><span>Need Coffee    </span></li>
+                        <li><i class="fa fa-coffee"></i><span>Need Coffee</span></li>
                     </ul>
-
-                </li>
-                <li id="two-sec">
-                    <a href="#two-sec">الخدمات</a>
-                    <ul class="sub-menu">
-
-                        <li><a href="#">السماحات</a></li>
-                    </ul>
-                </li>
-                
-            </ul>
+                </div>
+            </div>
+            <div class="section">
+                <input type="radio" name="accordion-1" id="section-4" value="toggle" />
+                <label for="section-4"> <span>Section 4</span></label>
+                <div class="content"></div>
+            </div>
         </div>
     </div>
+    <div class="ab-content">
+        
+        @RenderBody()
+
+    </div>
+
+</div>
     <div style="clear: both"></div>
-    <div class="ab-footer">
+    <div class="ab-footer-ar">
         <br />
         <p>      &copy; @DateTime.Now.Year - Damascus</p>
     </div>
-    <div id="grid"></div>
-<script>
-    $(function() {
-        
-    })
-    $(function() {
-        $("#grid").kendoGrid({
-            columns: [
-                { "title": "Id", "field": "Id" },
-                { "title": "Name", "field": "Name" },
-                { "title": "Order", "field": "Order" }
-            ],
-            groupable: true,
-            pageable: true,
-            sortable: true,
-            dataSource: {
-                transport: {
-                    read: {
-                        url: '@Url.Action("Read", "JobTitle", new { area = "Incentive" })'
-                    }
-                }
+    
 
-            },
-            pagesize: 10,
-            serverPaging: true,
-            serverSorting: true,
-            serverFiltering: true,
-            serverGrouping: true,
-
-        });
-    });
-</script>
    
 @RenderSection("scripts", required: false)
 
-    <style>
-        .ab-content {
-            
-            width: 80%;
-            height: 80vh;
-            float: left;
-            position: static;
-        }
-
-        .ab-menu-ar {
-            width: 20%;
-            height: 80vh;
-            float: right;
-           
-        }
-
-        .accordion {
-        }
-        .accordion-module {
-            display: block;
-            position: relative;
-            min-width: 110px;
-            padding: 0 10px 0 40px;
-            color: #fdfdfd;
-            background: #00cccc;
-            background: -moz-linear-gradient(top, #00cccc 0%, #004757 100%);
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00cccc), color-stop(100%,#004757));
-            background: -webkit-linear-gradient(top, #00cccc 0%,#004757 100%);
-            background: -o-linear-gradient(top, #00cccc 0%,#004757 100%);
-            background: -ms-linear-gradient(top, #00cccc 0%,#004757 100%);
-            background: linear-gradient(top, #00cccc 0%,#004757 100%);
-            -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
-            -moz-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
-            box-shadow: inset 0px 1px 0px 0px rgba(255,255,255, .1), 0px 1px 0px 0px rgba(0,0,0, .1);
-            padding-top: 2px;
-            font: normal bold 14px/36px DroidKufi-Regular, sans-serif;
-            height: 35px;
-            text-align: center;
-        }
-    </style>
+    
 </body>
 </html>

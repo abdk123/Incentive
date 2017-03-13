@@ -2,6 +2,40 @@
     ViewBag.Title = "Home Page";
 }
 
-<h1>abd arsrfsdfdfsd</h1>
+<div class="site-map-ar">
+    <ul><li><a href="#">اسم الموديول >> </a></li><li><a href="#">الكلاس الحالي  >> </a></li><li><a href="#">الكلاس الابن</a></li></ul>
+</div>
+<div id="grid"></div>
+@section scripts{
+    <script>
 
+        $(function () {
+            $("#grid").kendoGrid({
+                columns: [
+                    { "title": "Id", "field": "Id" },
+                    { "title": "Name", "field": "Name" },
+                    { "title": "Order", "field": "Order" }
+                ],
+                groupable: true,
+                pageable: true,
+                sortable: true,
+                filterable:true,
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: '@Url.Action("Read", "JobTitle", new { area = "Incentive" })'
+                        },
+                        pageSize: 6
+                    }
 
+                },
+                pagesize: 10,
+                serverPaging: true,
+                serverSorting: true,
+                serverFiltering: true,
+                serverGrouping: true,
+                height: 478
+        });
+        });
+</script>
+}

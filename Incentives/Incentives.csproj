@@ -503,6 +503,7 @@
     <Content Include="Content\kendo\2016.1.226\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\2016.1.226\Uniform\sprite_kpi_2x.png" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\Menu\menu-ar.css" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\styles.css" />
     <Content Include="Content\themes.css" />
